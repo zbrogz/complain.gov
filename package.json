@@ -1,0 +1,25 @@
+{
+  "name": "complain.gov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbrogz/complain.gov.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zbrogz/complain.gov/issues"
+  },
+  "homepage": "https://github.com/zbrogz/complain.gov#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "uuid-js": "^0.7.5"
+  }
+}

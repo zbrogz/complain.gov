@@ -1,0 +1,80 @@
+body {
+    font-family: "Helvetica Neue";
+    color: #606266;
+    margin: 0px;
+    background: #40494E;
+}
+
+.el-table .cell {
+    word-break: normal;
+    text-align: center;
+}
+
+#text {
+    text-align: left;
+}
+
+.vote {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    background: #C61A41;
+    color: white;
+    display: flex;
+    padding-left: 20px;
+}
+
+#main {
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: white;
+    min-height: 76vh;
+}
+
+#footer {
+    background: #40494E;
+    color: white;
+    padding-left: 20px;
+    align-content: center;
+    text-align: center;
+}
+
+.el-form {
+    background: #EEE;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+}
+
+#f {
+    font-size: 15px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+    color: lightskyblue;
+}
+
+/* visited link */
+a:visited {
+    color: lightcoral;
+}
+
+/* mouse over link */
+a:hover {
+    color: whitesmoke;
+}
+
+/* selected link */
+a:active {
+    color: lightblue;
+}

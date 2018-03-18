@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <link rel="stylesheet" href="/styles.css">
+        <title>Complain.gov</title>
+    </head>
+    <body>
+        <div id="app">
+            <div id=header>
+                <h1><i class="el-icon-edit"></i> Complain.gov</h1>
+            </div>
+            <div id=main>
+                <h4>Your destination to make complaints about anything. Feel free to be as open and critical as desired.</h4>
+                <el-form ref="form" :model="form">
+                    <h2>Complaint</h2>
+                    <el-form-item>
+                        <el-input type="textarea" autosize placeholder="Enter complaint here" v-model="form.text"></el-input>
+                    </el-form-item>
+                    <el-form-item>
+                        <el-button type="primary" v-on:click="addComplaint">Submit</el-button>
+                        <el-button type="info" v-on:click="generate">Generate</el-button>
+                        <el-button type="default" v-on:click="clear">Clear</el-button>
+                    </el-form-item>
+                </el-form>
+
+                <el-table :data="complaints" empty-text="No Data" stripe style="width: 100%">
+                    <el-table-column width=30>
+                        <template slot-scope="scope">
+                            <el-button icon="el-icon-delete" label="Complaints" type="text" v-on:click="deleteComplaint(scope.row.id)"></el-button>
+                        </template>
+                    </el-table-column>
+                    <el-table-column prop="timestamp" sortable label="Date" width="100"></el-table-column>
+                    <el-table-column sortable sort-by="votes"label="Votes" width="100">
+                        <template slot-scope="scope">
+                            <el-button class="vote" icon="el-icon-caret-top" type="text" v-on:click="upVote(scope.row)"></el-button>
+                            <p class="vote">{{scope.row.votes}}</p>
+                            <el-button class="vote" icon="el-icon-caret-bottom" type="text"v-on:click="downVote(scope.row)"></el-button>
+                        </template>
+                    </el-table-column>
+                    <el-table-column sortable sort-by="text"label="Complaints" min-width="100">
+                            <template slot-scope="scope">
+                                <p id="text">{{scope.row.text}}</p>
+                            </template>
+                    </el-table-column>
+                </el-table>
+            </div>
+            <div id=footer>
+                <p id=f><a href="https://github.com/zbrogz/complain.gov">Github</a> &#160 &#160 - &#160 &#160 Made  by Zach Brogan</p>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+        <script src="/script.js"></script>
+    </body>
+</html>
