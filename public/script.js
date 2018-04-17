@@ -15,7 +15,6 @@ var app = new Vue({
     methods: {
         getComplaints: function() {
             axios.get("/api/complaints").then(response => {
-                console.log(response.data);
                 this.complaints = response.data;
               return true;
             }).catch(err => {
@@ -32,7 +31,6 @@ var app = new Vue({
             });
         },
         deleteComplaint: function(id) {
-            console.log(id);
             axios.delete("/api/complaints/" + id).then(response => {
                 this.getComplaints();
                 return true;
@@ -59,7 +57,6 @@ var app = new Vue({
         },
         generate: function() {
             axios.get("https://www.reddit.com/r/complaints/random.json").then(response => {
-                console.log(response.data)
                 this.form.text = response.data[0].data.children[0].data.selftext;
                 return true;
               }).catch(err => {
